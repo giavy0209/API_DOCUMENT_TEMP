@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Thông tin chung chung</h1>
+        <p>status 1 : success</p>
+        <p>status 401 : cần auth</p>
+        <p>status 0 : thiếu dữ liệu request</p>
+        <section>
+            <h1>/user</h1>
+            
+            <div class="api">
+                <div class="title get">GET</div>
+                <p>Lấy thông tin user</p>
+                <div class="param">
+                    <div class="title">Header</div>
+                    <p>Authenticate TOKEN</p>
+                </div>
+                <div class="param">
+                    <div class="title">Query</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Params</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Response</div>
+                    <p>email</p>
+                    <p>ref_code</p>
+                    <p>is2FA</p>
+                    <p>two_face_secret</p>
+                    <p>kyc (Object)</p>
+                    <p>kyc.status</p>
+                    <p>kyc.id</p>
+                    <p>kyc.first_name</p>
+                    <p>kyc.last_name</p>
+                    <p>kyc.phone</p>
+                    <p>kyc.birth_day</p>
+                    <p>kyc.address</p>
+                    <p>kyc.country</p>
+                </div>
+            </div>
+
+            <div class="api">
+                <div class="title post">POST</div>
+                <p>Đăng ký</p>
+                <div class="param">
+                    <div class="title">Header</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Query</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Params</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Body</div>
+                    <p>email</p>
+                    <p>password</p>
+                    <p>reg_code</p>
+                    <p>ref_code</p>
+                </div>
+                <div class="param">
+                    <div class="title">Response</div>
+                    <p>status 101 : Email đã tồn tại</p>
+                    <p>status 102 : Sai email code hoặc hết hạn</p>
+                </div>
+            </div>
+
+            <div class="api">
+                <div class="title put">PUT</div>
+                <p>Update thông tin user</p>
+                <div class="param">
+                    <div class="title">Header</div>
+                    <p>Authenticate TOKEN</p>
+                </div>
+                <div class="param">
+                    <div class="title">Query</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Params</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Body</div>
+                    <p>old_password</p>
+                    <p>new_password</p>
+                    <p>kyc (Object)</p>
+                    <p>kyc.id</p>
+                    <p>kyc.first_name</p>
+                    <p>kyc.last_name</p>
+                    <p>kyc.phone</p>
+                    <p>kyc.birth_day</p>
+                    <p>kyc.address</p>
+                    <p>kyc.country</p>
+                </div>
+                <div class="param">
+                    <div class="title">Response</div>
+                    <p>status 100 : sai old_password</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h1>/code</h1>
+
+            <div class="api">
+                <div class="title post">POST</div>
+                <p>Tạo code </p>
+                <div class="param">
+                    <div class="title">Header</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Query</div>
+                    <p>type === 1 : Mã đăng ký</p>
+                    <p>type === 2 : Mã quên MK</p>
+                </div>
+                <div class="param">
+                    <div class="title">Params</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Body</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Response</div>
+                    <p>status 100 : Email đã tồn tại</p>
+                    <p>status 101 : Email đã tồn tại nếu type = 1 , email chưa tồn tại nếu type = 2</p>
+                    <p>status 102 : Chờ 2p trước khi yêu cầu lại</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h1>/forgot_password</h1>
+
+            <div class="api">
+                <div class="title post">POST</div>
+                <p>forgot_password </p>
+                <div class="param">
+                    <div class="title">Header</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Query</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Params</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Body</div>
+                    <p>email</p>
+                    <p>forgot_password_code</p>
+                    <p>new_password</p>
+                </div>
+                <div class="param">
+                    <div class="title">Response</div>
+                    <p>status 100 : Sai code</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h1>/verify_2fa</h1>
+
+            <div class="api">
+                <div class="title post">POST</div>
+                <p>verify_2fa </p>
+                <div class="param">
+                    <div class="title">Header</div>
+                    <p>Authenticate TOKEN</p>
+                </div>
+                <div class="param">
+                    <div class="title">Query</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Params</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Body</div>
+                    <p>token</p>
+                </div>
+                <div class="param">
+                    <div class="title">Response</div>
+                    <p>status 100 : Sai token</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h1>/disable_2fa</h1>
+
+            <div class="api">
+                <div class="title post">POST</div>
+                <p>disable_2fa </p>
+                <div class="param">
+                    <div class="title">Header</div>
+                    <p>Authenticate TOKEN</p>
+                </div>
+                <div class="param">
+                    <div class="title">Query</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Params</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Body</div>
+                    <p>token</p>
+                    <p>password</p>
+                </div>
+                <div class="param">
+                    <div class="title">Response</div>
+                    <p>status 100 : Sai token</p>
+                    <p>status 101 : Sai pass</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h1>/coins</h1>
+
+            <div class="api">
+                <div class="title get">GET</div>
+                <p>lấy các đồng coin </p>
+                <div class="param">
+                    <div class="title">Header</div>
+                    <p>Authenticate TOKEN</p>
+                </div>
+                <div class="param">
+                    <div class="title">Query</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Params</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Body</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Response</div>
+                    <p>data : Array</p>
+                    <p>name</p>
+                    <p>code</p>
+                    <p>deposit_fee</p>
+                    <p>withdraw_fee</p>
+                    <p>icon.path : url icon</p>
+                    <p>min_withdraw</p>
+                    <p>min_withdraw</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h1>/balances</h1>
+
+            <div class="api">
+                <div class="title get">GET</div>
+                <p>lấy balances </p>
+                <div class="param">
+                    <div class="title">Header</div>
+                    <p>Authenticate TOKEN</p>
+                </div>
+                <div class="param">
+                    <div class="title">Query</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Params</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Body</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Response</div>
+                    <p>data : Array</p>
+                    <p>balance : Số dư</p>
+                    <p>locked : bị khóa</p>
+                    <p>coin.icon.path : url icon</p>
+                    <p>wallet.address : địa chỉ ví</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h1>/transactions</h1>
+
+            <div class="api">
+                <div class="title get">GET</div>
+                <p>lấy ls giao dịch </p>
+                <div class="param">
+                    <div class="title">Header</div>
+                    <p>Authenticate TOKEN</p>
+                </div>
+                <div class="param">
+                    <div class="title">Query</div>
+                    <p>tyoe : các loại giao dịch, cách nhau bằng ","</p>
+                    <p>coin : _id của đồng coin tìm giao dịch, bỏ trống tìm tất cả</p>
+                    <p>skip : bỏ qua, default = 0</p>
+                    <p>limit : giới hạn default = 20</p>
+                </div>
+                <div class="param">
+                    <div class="title">Params</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Body</div>
+                    <p>NULL</p>
+                </div>
+                <div class="param">
+                    <div class="title">Response</div>
+                    <p>data : Array</p>
+                    <p>from_address</p>
+                    <p>to_address</p>
+                    <p>hash</p>
+                    <p>value</p>
+                    <p>create_date</p>
+                    <p>coin : (xem GET /coins)</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

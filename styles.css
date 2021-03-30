@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1366px;
+}
+
+section {
+  margin-top: 50px;
+}
+
+.title {
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.api {
+  margin-top: 50px;
+  padding-bottom: 20px;
+  border-bottom: 5px dashed #ccc;
+}
+
+.api p {
+  margin-top: 20px;
+}
+
+.api .param {
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #aaa;
+}
+
+.api .param .title {
+  color: #fff;
+}
+
+.get {
+  background-color: #00ff00;
+}
+
+.post {
+  background-color: #f0f000;
+}
+
+.put {
+  background-color: orange;
+}
+
+.delete {
+  background-color: red;
+}
+/*# sourceMappingURL=styles.css.map */
